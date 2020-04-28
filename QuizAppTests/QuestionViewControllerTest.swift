@@ -26,10 +26,21 @@ class QuestionViewControllerTest: XCTestCase {
         XCTAssertEqual(makeSUT(options: ["A1", "A2"]).tableView.title(at: 1), "A2")
     }
     
+    func test_optionSelected_notifiesDelegate() {
+        var receivedAnswer = ""
+        
+        let sut = makeSUT(options: ["A1"]) { receivedAnswer = $0 }
+        
+        sut.tableView.select(row: 0)
+        
+        XCTAssertEqual(receivedAnswer, "A1")
+    }
+    
+    
     // MARK: Helper
     
-    func makeSUT(question: String = "", options: [String] = []) -> QuestionViewController {
-        let sut = QuestionViewController(question: question, options: options)
+    func makeSUT(question: String = "", options: [String] = [], selection: @escaping (String) -> Void = { _ in }) -> QuestionViewController {
+        let sut = QuestionViewController(question: question, options: options, selection: selection)
         _ = sut.view  // Loads view, Docs suggest you should not invoke viewDidLoad
         return sut
     }
@@ -45,5 +56,8 @@ private extension UITableView {
         return cell(at: row)?.textLabel?.text
     }
     
+    func select(row: Int) {
+        delegate?.tableView?(self, didSelectRowAt: IndexPath(row: row, section: 0))
+    }
     
 }
