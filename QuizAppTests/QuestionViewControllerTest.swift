@@ -44,6 +44,7 @@ class QuestionViewControllerTest: XCTestCase {
         
         let sut = makeSUT(options: ["A1", "A2"]) { receivedAnswer = $0 }
         sut.tableView.allowsMultipleSelection = true
+        
         sut.tableView.select(row: 0)
         XCTAssertEqual(receivedAnswer, ["A1"])
         
@@ -56,6 +57,7 @@ class QuestionViewControllerTest: XCTestCase {
         
         let sut = makeSUT(options: ["A1", "A2"]) { receivedAnswer = $0 }
         sut.tableView.allowsMultipleSelection = true
+        
         sut.tableView.select(row: 0)
         XCTAssertEqual(receivedAnswer, ["A1"])
         
@@ -63,8 +65,8 @@ class QuestionViewControllerTest: XCTestCase {
         XCTAssertEqual(receivedAnswer, [])
     }
 
-    // MARK: Helper
     
+    // MARK: Helper
     func makeSUT(question: String = "", options: [String] = [], selection: @escaping ([String]) -> Void = { _ in }) -> QuestionViewController {
         let sut = QuestionViewController(question: question, options: options, selection: selection)
         _ = sut.view  // Loads view, Docs suggest you should not invoke viewDidLoad
@@ -74,10 +76,10 @@ class QuestionViewControllerTest: XCTestCase {
 
 
 private extension UITableView {
-    
     func cell(at row: Int) -> UITableViewCell? {
         return dataSource?.tableView(self, cellForRowAt: IndexPath(row: row, section: 0))
     }
+    
     func title(at row: Int) -> String? {
         return cell(at: row)?.textLabel?.text
     }

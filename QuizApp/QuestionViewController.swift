@@ -9,10 +9,8 @@
 import UIKit
 
 class QuestionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
     
     @IBOutlet weak var headerLabel: UILabel!
-    
     @IBOutlet weak var tableView: UITableView!
     
     private var question: String = ""
@@ -34,6 +32,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
         headerLabel.text = question
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return options.count
     }
@@ -52,10 +51,8 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
-    func selectedOptions(in tableView: UITableView) -> [String] {
-        guard let indexPaths = tableView.indexPathsForSelectedRows else {
-            return []
-        }
+    private func selectedOptions(in tableView: UITableView) -> [String] {
+        guard let indexPaths = tableView.indexPathsForSelectedRows else { return [] }
         return indexPaths.map { options[ $0.row] }
     }
     
