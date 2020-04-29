@@ -9,24 +9,6 @@
 import Foundation
 import UIKit
 
-struct PresentableAnswer {
-    let question: String
-    let answer: String
-    let wrongAnswer: String?
-}
-
-class CorrectAnswerCell: UITableViewCell {
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var answerLabel: UILabel!
-}
-
-class WrongAnswerCell: UITableViewCell {
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var correctAnswerLabel: UILabel!
-    
-    @IBOutlet weak var wrongAnswerLabel: UILabel!
-}
-
 class ResultsViewController: UIViewController, UITableViewDataSource {
 
     
@@ -63,25 +45,17 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
     }
     
     private func correctAnswerCell(for answer: PresentableAnswer) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectAnswerCell") as! CorrectAnswerCell
+        let cell = tableView.dequeueReusableCell(CorrectAnswerCell.self)!
         cell.questionLabel?.text = answer.question
         cell.answerLabel?.text = answer.answer
         return cell
     }
     
     private func wrongAnswerCell(for answer: PresentableAnswer) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WrongAnswerCell") as! WrongAnswerCell
+        let cell = tableView.dequeueReusableCell(WrongAnswerCell.self)!
         cell.questionLabel?.text = answer.question
         cell.correctAnswerLabel?.text = answer.answer
         cell.wrongAnswerLabel?.text = answer.wrongAnswer
         return cell
-    }
-}
-
-
-extension UITableView {
-    func register(_ type: UITableViewCell.Type) {
-        let className = String(describing: type)
-        register(UINib(nibName: className, bundle: nil), forCellReuseIdentifier: className)
     }
 }
