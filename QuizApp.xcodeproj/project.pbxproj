@@ -17,9 +17,7 @@
 		4415EBD42457490B00022E67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4415EBD32457490B00022E67 /* Assets.xcassets */; };
 		4415EBD72457490B00022E67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4415EBD52457490B00022E67 /* LaunchScreen.storyboard */; };
 		4415EBED24574CB200022E67 /* QuestionViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4415EBEC24574CB200022E67 /* QuestionViewControllerTest.swift */; };
-		4415EBF124574DDE00022E67 /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4415EBF024574DDE00022E67 /* QuestionViewController.xib */; };
 		4415EBF224574E7900022E67 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4415EBEE24574D7500022E67 /* QuestionViewController.swift */; };
-		4415EBF324574F3A00022E67 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4415EBEE24574D7500022E67 /* QuestionViewController.swift */; };
 		4415EBF42457584C00022E67 /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4415EBF024574DDE00022E67 /* QuestionViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -209,7 +207,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4415EBF124574DDE00022E67 /* QuestionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +228,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4415EBF324574F3A00022E67 /* QuestionViewController.swift in Sources */,
 				4415EBED24574CB200022E67 /* QuestionViewControllerTest.swift in Sources */,
 				44145D3F24590567002C8546 /* ResultsViewControllerTest.swift in Sources */,
 				44145D4624592D2E002C8546 /* TableViewHelpers.swift in Sources */,
