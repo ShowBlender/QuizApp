@@ -40,8 +40,8 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         tableView.dataSource = self
         headerLabel.text = summary
-        tableView.register(UINib(nibName: "CorrectAnswerCell", bundle: nil), forCellReuseIdentifier: "CorrectAnswerCell")
-        tableView.register(UINib(nibName: "WrongAnswerCell", bundle: nil), forCellReuseIdentifier: "WrongAnswerCell")
+        tableView.register(CorrectAnswerCell.self)
+        tableView.register(WrongAnswerCell.self)
     }
     
     convenience init(summary: String, answers: [PresentableAnswer] = []) {
@@ -75,5 +75,13 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
         cell.correctAnswerLabel?.text = answer.answer
         cell.wrongAnswerLabel?.text = answer.wrongAnswer
         return cell
+    }
+}
+
+
+extension UITableView {
+    func register(_ type: UITableViewCell.Type) {
+        let className = String(describing: type)
+        register(UINib(nibName: className, bundle: nil), forCellReuseIdentifier: className)
     }
 }
