@@ -88,6 +88,7 @@ private extension UITableView {
         let indexPath = IndexPath(row: row, section: 0)
         selectRow(at: indexPath, animated: false, scrollPosition: .none)
         delegate?.tableView?(self, didSelectRowAt: indexPath)
+        print(row)
     }
     
     func deselect(row: Int) {
