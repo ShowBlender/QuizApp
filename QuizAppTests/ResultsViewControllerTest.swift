@@ -16,6 +16,17 @@ class ResultsViewControllerTest: XCTestCase {
         XCTAssertEqual(sut.headerLabel.text, "A Summary")
     }
     
+    func test_viewDidLoad_withoutAnswers_doesNotRenderAnswers() {
+        let sut = ResultsViewController(summary: "A Summary", answers: [])
+        _ = sut.view
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
+    }
     
+    func test_viewDidLoad_withOneAnswer_RenderAnswer() {
+        let sut = ResultsViewController(summary: "A Summary", answers: ["A1"])
+        _ = sut.view
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
+        XCTAssertEqual(sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0))?.textLabel?.text, "A1")
+    }
     
 }

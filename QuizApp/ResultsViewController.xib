@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultsViewController" customModule="QuizApp" customModuleProvider="target">
             <connections>
                 <outlet property="headerLabel" destination="Xf3-MW-OYW" id="W5L-si-MOr"/>
+                <outlet property="tableView" destination="jhw-f4-tBL" id="m46-NU-zOn"/>
                 <outlet property="view" destination="iN0-l3-epB" id="pBM-pb-H7k"/>
             </connections>
         </placeholder>
@@ -25,6 +26,11 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jhw-f4-tBL">
+                    <rect key="frame" x="85" y="209" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
