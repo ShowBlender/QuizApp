@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            _ = vc.view
 //            vc.tableView.allowsMultipleSelection = true
             
-            let vc = ResultsViewController(summary: "You got 1/2 Correct", answers: [
+            let vc = ResultsViewController(summary: "Summary", answers: [
                 PresentableAnswer(question: "Question 1", answer: "Woot!", wrongAnswer: nil),
                 PresentableAnswer(question: "Question 2 Question 2 Question 2 Question 2 Question 2 Question 2 Question 2 Question 2 Question 2 ", answer: "Woot!Woot!Woot!Woot!Woot!Woot!Woot!Woot!Woot!Woot!Woot!Woot!Woot!Woot!Woot!Woot!", wrongAnswer: nil),
                 PresentableAnswer(question: "Question 3", answer: "Yes", wrongAnswer: "No"),
