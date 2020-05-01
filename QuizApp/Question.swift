@@ -12,14 +12,12 @@ enum Question<T: Hashable>: Hashable {
   case singleAnswer(T)
   case multipleAnswer(T)
   
-  // TODO: 'Hashable.hashValue' is deprecated as a protocol requirement; conform type 'Question' to 'Hashable' by implementing 'hash(into:)' instead
-  
-  var hashValue: Int {
+  func hash(into hasher: inout Hasher) {
     switch self {
     case .singleAnswer(let a):
-      return a.hashValue
+      hasher.combine(a)
     case .multipleAnswer(let a):
-      return a.hashValue
+      hasher.combine(a)
     }
   }
   
