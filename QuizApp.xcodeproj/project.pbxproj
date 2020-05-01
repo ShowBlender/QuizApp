@@ -126,6 +126,7 @@
 		4415EBC92457490600022E67 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				4464F15D245C8ED20085C7A3 /* Question.swift */,
 				44145D40245905F6002C8546 /* ResultsViewController.swift */,
 				44145D542459E86E002C8546 /* WrongAnswerCell.swift */,
 				44145D522459E854002C8546 /* CorrectAnswerCell.swift */,
@@ -142,7 +143,6 @@
 				4415EBD52457490B00022E67 /* LaunchScreen.storyboard */,
 				4415EBD82457490B00022E67 /* Info.plist */,
 				44EED998245B64E400754385 /* NavigationControllerRouter.swift */,
-				4464F15D245C8ED20085C7A3 /* Question.swift */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
