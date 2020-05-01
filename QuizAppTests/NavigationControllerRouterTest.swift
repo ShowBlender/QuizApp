@@ -13,13 +13,18 @@ import QuizEngine
 class NavigationControllerRouterTest: XCTestCase {
   let navigationController = UINavigationController()
   let factory = ViewControllerFactoryStub()
+//  var sut: NavigationControllerRouter!
+  lazy var sut: NavigationControllerRouter = { return NavigationControllerRouter(self.navigationController, factory: self.factory) }()
+  
+//  override func setUp() {
+//    sut = NavigationControllerRouter(navigationController, factory: factory)
+//  }
   
   func test_routesToQuestion_showsQuestionController() {
     let viewController = UIViewController()
     let secondViewController = UIViewController()
     factory.stub(question: "Q1", with: viewController)
     factory.stub(question: "Q2", with: secondViewController)
-    let sut = NavigationControllerRouter(navigationController, factory: factory)
     
     sut.routeTo(question: "Q1", answerCallback: { _ in })
     sut.routeTo(question: "Q2", answerCallback: { _ in })
@@ -30,9 +35,6 @@ class NavigationControllerRouterTest: XCTestCase {
   }
   
   func test_routeToQuestion_presentsQuestionControllerWithRightCallback() {
-    let viewController = UIViewController()
-    factory.stub(question: "Q1", with: viewController)
-    let sut = NavigationControllerRouter(navigationController, factory: factory)
     var callbackWasFired = false
     sut.routeTo(question: "Q1", answerCallback: { _ in callbackWasFired = true })
     factory.answerCallback["Q1"]!("anything")
@@ -48,7 +50,7 @@ class NavigationControllerRouterTest: XCTestCase {
     }
     func questionViewController(for question: String, answerCallback: @escaping (String) -> Void) -> UIViewController {
       self.answerCallback[question] = answerCallback
-      return stubbedQuestions[question]!
+      return stubbedQuestions[question] ?? UIViewController()
     }
     
   }
