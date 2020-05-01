@@ -9,6 +9,27 @@
 import UIKit
 import QuizEngine
 
+enum Question<T: Hashable>: Hashable {
+  case singleAnswer(T)
+  case multipleAnswer(T)
+  
+  // TODO: 'Hashable.hashValue' is deprecated as a protocol requirement; conform type 'Question' to 'Hashable' by implementing 'hash(into:)' instead
+  
+  var hashValue: Int {
+    switch self {
+    case .singleAnswer(let a):
+      return a.hashValue
+    case .multipleAnswer(let a):
+      return a.hashValue
+    }
+  }
+  
+  static func ==(lhs: Question<T>, rhs: Question<T>) -> Bool {
+    return false //lhs == rhs
+  }
+  
+}
+
 protocol ViewControllerFactory {
   func questionViewController(for question: String, answerCallback: @escaping (String) -> Void) -> UIViewController
 }

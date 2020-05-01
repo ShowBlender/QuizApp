@@ -24,6 +24,7 @@
 		4415EBED24574CB200022E67 /* QuestionViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4415EBEC24574CB200022E67 /* QuestionViewControllerTest.swift */; };
 		4415EBF224574E7900022E67 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4415EBEE24574D7500022E67 /* QuestionViewController.swift */; };
 		4415EBF42457584C00022E67 /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4415EBF024574DDE00022E67 /* QuestionViewController.xib */; };
+		4464F15C245C8A6C0085C7A3 /* QuestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4464F15B245C8A6C0085C7A3 /* QuestionTest.swift */; };
 		44EED993245B633F00754385 /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EED992245B633F00754385 /* QuizEngine.framework */; };
 		44EED994245B633F00754385 /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44EED992245B633F00754385 /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		44EED997245B63E400754385 /* NavigationControllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EED996245B63E400754385 /* NavigationControllerRouterTest.swift */; };
@@ -76,6 +77,7 @@
 		4415EBEC24574CB200022E67 /* QuestionViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewControllerTest.swift; sourceTree = "<group>"; };
 		4415EBEE24574D7500022E67 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionViewController.swift; path = QuizApp/QuestionViewController.swift; sourceTree = SOURCE_ROOT; };
 		4415EBF024574DDE00022E67 /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
+		4464F15B245C8A6C0085C7A3 /* QuestionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTest.swift; sourceTree = "<group>"; };
 		44EED992245B633F00754385 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44EED996245B63E400754385 /* NavigationControllerRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTest.swift; sourceTree = "<group>"; };
 		44EED998245B64E400754385 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				44145D4524592D2E002C8546 /* TableViewHelpers.swift */,
 				44145D3E24590567002C8546 /* ResultsViewControllerTest.swift */,
 				44EED996245B63E400754385 /* NavigationControllerRouterTest.swift */,
+				4464F15B245C8A6C0085C7A3 /* QuestionTest.swift */,
 			);
 			path = QuizAppTests;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4464F15C245C8A6C0085C7A3 /* QuestionTest.swift in Sources */,
 				44EED997245B63E400754385 /* NavigationControllerRouterTest.swift in Sources */,
 				4415EBED24574CB200022E67 /* QuestionViewControllerTest.swift in Sources */,
 				44145D3F24590567002C8546 /* ResultsViewControllerTest.swift in Sources */,
