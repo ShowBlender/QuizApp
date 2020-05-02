@@ -16,13 +16,13 @@ class iOSViewControllerFactory: ViewControllerFactory {
   }
   
   func questionViewController(for question: Question<String>, answerCallback: @escaping ([String]) -> Void) -> UIViewController {
+    guard let options = options[question] else { fatalError("Couldn't find options for question.") }
     switch question {
     case .singleAnswer(let a):
-      return QuestionViewController(question: a, options: options[question]!, selection: answerCallback)
+      return QuestionViewController(question: a, options: options, selection: answerCallback)
     default:
       return UIViewController()
     }
-    return QuestionViewController()
   }
   
   func resultViewController(for result: Result<Question<String>, [String]>) -> UIViewController {
