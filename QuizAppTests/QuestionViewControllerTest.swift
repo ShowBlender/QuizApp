@@ -82,9 +82,7 @@ class QuestionViewControllerTest: XCTestCase {
     
     // MARK: Helper
     func makeSUT(question: String = "", options: [String] = [], selection: @escaping ([String]) -> Void = { _ in }) -> QuestionViewController {
-      let questionType = Question.singleAnswer(question)
-      let factory = iOSViewControllerFactory(options: [questionType: options])
-      let sut = factory.questionViewController(for: questionType, answerCallback: selection) as! QuestionViewController
+        let sut = QuestionViewController(question: question, options: options, selection: selection)
         _ = sut.view  // Loads view, Docs suggest you should not invoke viewDidLoad
         return sut
     }
