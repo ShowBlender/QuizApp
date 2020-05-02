@@ -10,13 +10,22 @@ import UIKit
 import QuizEngine
 
 class iOSViewControllerFactory: ViewControllerFactory {
+  private let options: Dictionary<Question<String>, [String]>
+  init(options: Dictionary<Question<String>, [String]>) {
+    self.options = options
+  }
+  
   func questionViewController(for question: Question<String>, answerCallback: @escaping (String) -> Void) -> UIViewController {
+    switch question {
+    case .singleAnswer(let a):
+      return QuestionViewController(question: a, options: options[question]!) { _ in }
+    default:
+      return UIViewController()
+    }
     return QuestionViewController()
   }
   
   func resultViewController(for result: Result<Question<String>, String>) -> UIViewController {
     return UIViewController()
   }
-  
-  
 }
