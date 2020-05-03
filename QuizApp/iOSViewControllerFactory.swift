@@ -37,7 +37,7 @@ class iOSViewControllerFactory: ViewControllerFactory {
   
   private func questionViewController(for question: Question<String>, value: String, options: [String], answerCallback: @escaping ([String]) -> Void) -> QuestionViewController {
     let presenter = QuestionPresenter(questions: questions, question: question)
-    let controller = QuestionViewController(question: value, options: options, selection: answerCallback)
+    let controller = QuestionViewController(question: value, options: options, allowsMultipleSelection: false, selection: answerCallback)
     controller.title = presenter.title
     return controller
   }
