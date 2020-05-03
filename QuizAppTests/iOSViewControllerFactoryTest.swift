@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+import QuizEngine
 @testable import QuizApp
 
 class iOSViewControllerFactoryTest: XCTestCase {
@@ -49,6 +50,13 @@ class iOSViewControllerFactoryTest: XCTestCase {
     let controller = makeQuestionController(question: multipleAnswerQuestion)
     XCTAssertTrue(controller.allowsMultipleSelection)
    }
+  
+  func test_resultsViewController_createsController() {
+    let sut = makeSUT(options: [:])
+    let controller = sut.resultViewController(for: Result(answers: Dictionary<Question<String>, [String]>(), score: 0)) as? ResultsViewController
+    XCTAssertNotNil(controller)
+  }
+  
   
   //MARK: Helpers
   func makeSUT(options: Dictionary<Question<String>, [String]>) -> iOSViewControllerFactory {

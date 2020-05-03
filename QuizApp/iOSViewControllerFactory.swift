@@ -40,6 +40,6 @@ class iOSViewControllerFactory: ViewControllerFactory {
   }
   
   func resultViewController(for result: Result<Question<String>, [String]>) -> UIViewController {
-    return UIViewController()
+    return ResultsViewController()
   }
 }
