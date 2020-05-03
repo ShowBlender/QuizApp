@@ -52,6 +52,24 @@ class iOSViewControllerFactoryTest: XCTestCase {
    }
   
   func test_resultsViewController_createsControllerWithSummary() {
+    let results = makeResults()
+    XCTAssertEqual(results.controller.summary, results.presenter.summary)
+  }
+
+  func test_resultsViewController_createsControllerWithPresentableAnswers() {
+    let results = makeResults()
+    XCTAssertEqual(results.controller.answers.count, results.presenter.presentableAnswers.count)
+  }
+  
+  //MARK: Helpers
+  func makeSUT(options: Dictionary<Question<String>, [String]> = [:], correctAnswers: Dictionary<Question<String>, [String]> = [:]) -> iOSViewControllerFactory {
+    return iOSViewControllerFactory(questions: [singleAnswerQuestion, multipleAnswerQuestion], options: options, correctAnswers: correctAnswers)
+  }
+  
+  func makeQuestionController(question: Question<String> = Question.singleAnswer("")) -> QuestionViewController {
+    return makeSUT(options: [question: options]).questionViewController(for: question, answerCallback: { _ in }) as! QuestionViewController
+  }
+  func makeResults() -> (controller: ResultsViewController, presenter: ResultsPresenter) {
     let userAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A2", "A3"]]
     let correctAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A2", "A3"]]
     let questions = [singleAnswerQuestion, multipleAnswerQuestion]
@@ -59,20 +77,9 @@ class iOSViewControllerFactoryTest: XCTestCase {
     let result = Result(answers: userAnswers, score: 2)
     let presenter = ResultsPresenter(result: result, questions: questions, correctAnswers: correctAnswers)
     
-    let sut = makeSUT(options: [:], correctAnswers: correctAnswers)
+    let sut = makeSUT(correctAnswers: correctAnswers)
     let controller = sut.resultViewController(for: result) as! ResultsViewController
-    XCTAssertEqual(controller.summary, presenter.summary)
+    return (controller, presenter)
   }
-  
-  
-  //MARK: Helpers
-  func makeSUT(options: Dictionary<Question<String>, [String]>, correctAnswers: Dictionary<Question<String>, [String]> = [:]) -> iOSViewControllerFactory {
-    return iOSViewControllerFactory(questions: [singleAnswerQuestion, multipleAnswerQuestion], options: options, correctAnswers: correctAnswers)
-  }
-  
-  func makeQuestionController(question: Question<String> = Question.singleAnswer("")) -> QuestionViewController {
-    return makeSUT(options: [question: options]).questionViewController(for: question, answerCallback: { _ in }) as! QuestionViewController
-  }
-  
   
 }
