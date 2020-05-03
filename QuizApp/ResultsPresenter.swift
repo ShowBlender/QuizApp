@@ -13,7 +13,7 @@ struct ResultsPresenter {
   let result: Result<Question<String>, [String]>
   
   var summary: String {
-    return "You got 1/2 Correct"
+    return "You got \(result.score)/\(result.answers.count) Correct"
   }
 }
 
