@@ -20,8 +20,11 @@ class iOSViewControllerFactory: ViewControllerFactory {
     switch question {
     case .singleAnswer(let a):
       return QuestionViewController(question: a, options: options, selection: answerCallback)
-    default:
-      return UIViewController()
+    case .multipleAnswer(let a):
+      let controller = QuestionViewController(question: a, options: options, selection: answerCallback)
+      _ = controller.view
+      controller.tableView.allowsMultipleSelection = true
+      return controller
     }
   }
   
