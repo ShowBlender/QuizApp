@@ -51,16 +51,23 @@ class iOSViewControllerFactoryTest: XCTestCase {
     XCTAssertTrue(controller.allowsMultipleSelection)
    }
   
-  func test_resultsViewController_createsController() {
-    let sut = makeSUT(options: [:])
-    let controller = sut.resultViewController(for: Result(answers: Dictionary<Question<String>, [String]>(), score: 0)) as? ResultsViewController
-    XCTAssertNotNil(controller)
+  func test_resultsViewController_createsControllerWithSummary() {
+    let userAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A2", "A3"]]
+    let correctAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A2", "A3"]]
+    let questions = [singleAnswerQuestion, multipleAnswerQuestion]
+    
+    let result = Result(answers: userAnswers, score: 2)
+    let presenter = ResultsPresenter(result: result, questions: questions, correctAnswers: correctAnswers)
+    
+    let sut = makeSUT(options: [:], correctAnswers: correctAnswers)
+    let controller = sut.resultViewController(for: result) as! ResultsViewController
+    XCTAssertEqual(controller.summary, presenter.summary)
   }
   
   
   //MARK: Helpers
-  func makeSUT(options: Dictionary<Question<String>, [String]>) -> iOSViewControllerFactory {
-    return iOSViewControllerFactory(questions: [singleAnswerQuestion, multipleAnswerQuestion], options: options)
+  func makeSUT(options: Dictionary<Question<String>, [String]>, correctAnswers: Dictionary<Question<String>, [String]> = [:]) -> iOSViewControllerFactory {
+    return iOSViewControllerFactory(questions: [singleAnswerQuestion, multipleAnswerQuestion], options: options, correctAnswers: correctAnswers)
   }
   
   func makeQuestionController(question: Question<String> = Question.singleAnswer("")) -> QuestionViewController {
