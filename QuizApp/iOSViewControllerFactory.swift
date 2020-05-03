@@ -23,7 +23,9 @@ class iOSViewControllerFactory: ViewControllerFactory {
   private func questionViewController(for question: Question<String>, options: [String], answerCallback: @escaping ([String]) -> Void) -> UIViewController {
     switch question {
      case .singleAnswer(let a):
-       return QuestionViewController(question: a, options: options, selection: answerCallback)
+      let controller = QuestionViewController(question: a, options: options, selection: answerCallback)
+      controller.title = "Question #1"
+       return controller
      case .multipleAnswer(let a):
        let controller = QuestionViewController(question: a, options: options, selection: answerCallback)
        _ = controller.view

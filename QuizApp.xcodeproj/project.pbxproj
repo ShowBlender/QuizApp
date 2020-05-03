@@ -27,6 +27,8 @@
 		4437F1B8245E45610071286B /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4437F1B7245E45610071286B /* ResultsPresenterTest.swift */; };
 		4437F1BA245E46180071286B /* ResultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4437F1B9245E46180071286B /* ResultHelper.swift */; };
 		4437F1BC245E47930071286B /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4437F1BB245E47930071286B /* ResultsPresenter.swift */; };
+		4437F1BE245F2B7A0071286B /* QuestionPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4437F1BD245F2B7A0071286B /* QuestionPresenterTest.swift */; };
+		4437F1C0245F2C0B0071286B /* QuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4437F1BF245F2C0B0071286B /* QuestionPresenter.swift */; };
 		4464F15C245C8A6C0085C7A3 /* QuestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4464F15B245C8A6C0085C7A3 /* QuestionTest.swift */; };
 		4464F15E245C8ED20085C7A3 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4464F15D245C8ED20085C7A3 /* Question.swift */; };
 		4464F160245CD46D0085C7A3 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4464F15F245CD46D0085C7A3 /* ViewControllerFactory.swift */; };
@@ -87,6 +89,8 @@
 		4437F1B7245E45610071286B /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
 		4437F1B9245E46180071286B /* ResultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHelper.swift; sourceTree = "<group>"; };
 		4437F1BB245E47930071286B /* ResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenter.swift; sourceTree = "<group>"; };
+		4437F1BD245F2B7A0071286B /* QuestionPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenterTest.swift; sourceTree = "<group>"; };
+		4437F1BF245F2C0B0071286B /* QuestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenter.swift; sourceTree = "<group>"; };
 		4464F15B245C8A6C0085C7A3 /* QuestionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTest.swift; sourceTree = "<group>"; };
 		4464F15D245C8ED20085C7A3 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4464F15F245CD46D0085C7A3 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				4464F15F245CD46D0085C7A3 /* ViewControllerFactory.swift */,
 				4464F163245CD5670085C7A3 /* iOSViewControllerFactory.swift */,
 				4437F1BB245E47930071286B /* ResultsPresenter.swift */,
+				4437F1BF245F2C0B0071286B /* QuestionPresenter.swift */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				4464F15B245C8A6C0085C7A3 /* QuestionTest.swift */,
 				4464F161245CD4AF0085C7A3 /* iOSViewControllerFactoryTest.swift */,
 				4437F1B7245E45610071286B /* ResultsPresenterTest.swift */,
+				4437F1BD245F2B7A0071286B /* QuestionPresenterTest.swift */,
 			);
 			path = QuizAppTests;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 				44145D512459E83D002C8546 /* PresentableAnswer.swift in Sources */,
 				4464F15E245C8ED20085C7A3 /* Question.swift in Sources */,
 				44145D552459E86E002C8546 /* WrongAnswerCell.swift in Sources */,
+				4437F1C0245F2C0B0071286B /* QuestionPresenter.swift in Sources */,
 				4464F164245CD5670085C7A3 /* iOSViewControllerFactory.swift in Sources */,
 				44EED999245B64E400754385 /* NavigationControllerRouter.swift in Sources */,
 				4415EBF224574E7900022E67 /* QuestionViewController.swift in Sources */,
@@ -315,6 +322,7 @@
 				4437F1B8245E45610071286B /* ResultsPresenterTest.swift in Sources */,
 				44EED997245B63E400754385 /* NavigationControllerRouterTest.swift in Sources */,
 				4415EBED24574CB200022E67 /* QuestionViewControllerTest.swift in Sources */,
+				4437F1BE245F2B7A0071286B /* QuestionPresenterTest.swift in Sources */,
 				4437F1BA245E46180071286B /* ResultHelper.swift in Sources */,
 				44145D3F24590567002C8546 /* ResultsViewControllerTest.swift in Sources */,
 				44145D4624592D2E002C8546 /* TableViewHelpers.swift in Sources */,

@@ -13,6 +13,10 @@ import XCTest
 class iOSViewControllerFactoryTest: XCTestCase {
   let options = ["A1", "A2"]
   
+  func test_questionViewController_singleAnswer_createsControllerWithTitle() {
+    XCTAssertEqual(makeQuestionController(question: Question.singleAnswer("Q1")).title, "Question #1")
+  }
+  
   func test_questionViewController_singleAnswer_createsControllerWithCorrectQuestion() {
     XCTAssertEqual(makeQuestionController(question: Question.singleAnswer("Q1")).question, "Q1")
   }
